@@ -46,7 +46,19 @@
 ## การวัดผล (PostHog)
 ทุกคลิกปุ่ม LINE และปุ่มโทรถูกส่งเป็น event `line_click` / `call_click` เข้า PostHog โปรเจกต์ของคุณ พร้อมระบุหน้าและข้อความของปุ่ม → ดูได้ว่าคอร์สไหนสร้าง lead มากที่สุด
 
-## Deploy (GitHub Pages)
+## Deploy (Vercel — แนะนำ)
+
+repo นี้พร้อม deploy บน Vercel ทันที (มี `vercel.json` แล้ว ไม่ต้องตั้งค่า build):
+
+1. เข้า [vercel.com/new](https://vercel.com/new) (team **JiaLucksa company**)
+2. กด **Import** repo `jiacpr-arch/jiacpr`
+3. Framework Preset: **Other** — ไม่ต้องใส่ Build Command / Output Directory → กด **Deploy**
+4. เสร็จแล้วได้เว็บที่ `jiacpr.vercel.app` — ทุกครั้งที่ push โค้ด Vercel deploy ให้อัตโนมัติ และทุก PR ได้ลิงก์ preview
+5. ต่อ domain: Project → Settings → **Domains** → เพิ่ม `jiacpr.com` และ `www.jiacpr.com` แล้วตั้ง DNS ตามที่ Vercel บอก (ง่ายกว่า GitHub Pages)
+
+หมายเหตุ: บน Vercel เปิด `cleanUrls` ไว้ URL จะสวยแบบ `/course` (ลิงก์ `.html` เดิม redirect ให้อัตโนมัติ)
+
+## Deploy (GitHub Pages — ทางเลือกสำรอง)
 
 merge เข้า `main` แล้วระบบ deploy อัตโนมัติผ่าน `.github/workflows/pages.yml`
 
