@@ -1,0 +1,42 @@
+[
+  {
+    "date": "เสาร์ 18 ก.ค. 2569",
+    "time": "09:00 – 12:30 น.",
+    "course": "cpr-aed",
+    "courseName": "CPR & AED บุคคลทั่วไป",
+    "location": "The Street รัชดา ชั้น 3",
+    "status": "เปิดรับสมัคร"
+  },
+  {
+    "date": "อาทิตย์ 26 ก.ค. 2569",
+    "time": "09:00 – 12:30 น.",
+    "course": "cpr-aed",
+    "courseName": "CPR & AED บุคคลทั่วไป",
+    "location": "The Street รัชดา ชั้น 3",
+    "status": "ใกล้เต็ม"
+  },
+  {
+    "date": "เสาร์ 1 ส.ค. 2569",
+    "time": "08:30 – 16:30 น.",
+    "course": "bls",
+    "courseName": "BLS Provider (บุคลากรการแพทย์)",
+    "location": "The Street รัชดา ชั้น 3",
+    "status": "เปิดรับสมัคร"
+  },
+  {
+    "date": "เสาร์ 8 ส.ค. 2569",
+    "time": "09:00 – 12:30 น.",
+    "course": "cpr-aed",
+    "courseName": "CPR & AED บุคคลทั่วไป",
+    "location": "The Street รัชดา ชั้น 3",
+    "status": "เปิดรับสมัคร"
+  },
+  {
+    "date": "เสาร์–อาทิตย์ 15–16 ส.ค. 2569",
+    "time": "08:30 – 16:30 น.",
+    "course": "acls",
+    "courseName": "ACLS Provider",
+    "location": "The Street รัชดา ชั้น 3",
+    "status": "เปิดรับสมัคร"
+  }
+]
