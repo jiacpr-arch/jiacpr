@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jiacpr-arch.github.io/jiacpr/sitemap.xml
+Sitemap: https://jiacpr.vercel.app/sitemap.xml
