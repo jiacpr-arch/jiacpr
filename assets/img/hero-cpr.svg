@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420" font-family="Prompt, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fdecec"/>
+      <stop offset="1" stop-color="#ffd9d9"/>
+    </linearGradient>
+  </defs>
+  <rect x="10" y="10" width="500" height="400" rx="28" fill="url(#bg)"/>
+  <circle cx="260" cy="175" r="95" fill="#fff" opacity="0.9"/>
+  <path d="M260 235c-1.5 0-3-.5-4.2-1.5C236 216.8 210 195 210 172.6c0-16.2 12.8-29.2 28.6-29.2 8.1 0 15.7 3.7 20.7 9.6 5-5.9 12.6-9.6 20.7-9.6 15.8 0 28.6 13 28.6 29.2 0 22.4-26 44.2-45.1 60.9-1.2 1-2.7 1.5-4.2 1.5z" fill="#d62828"/>
+  <path d="M160 190h55l12-28 20 56 16-40 10 12h87" fill="none" stroke="#1b2430" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+  <rect x="60" y="300" width="400" height="66" rx="18" fill="#1b2430"/>
+  <text x="260" y="342" text-anchor="middle" fill="#ffffff" font-size="26" font-weight="600">อบรม CPR • AED • BLS • ACLS</text>
+  <text x="260" y="70" text-anchor="middle" fill="#b01e1e" font-size="22" font-weight="600">ทุกวินาทีมีค่า…ช่วยชีวิตได้ถ้าคุณทำเป็น</text>
+</svg>
