@@ -43,39 +43,49 @@
 - `ph-*.svg` — รูปการ์ดคอร์ส (สัดส่วน 16:9)
 - `hero-cpr.svg` — รูปใหญ่หน้าแรก
 
-## การวัดผล (PostHog)
-ทุกคลิกปุ่ม LINE และปุ่มโทรถูกส่งเป็น event `line_click` / `call_click` เข้า PostHog โปรเจกต์ของคุณ พร้อมระบุหน้าและข้อความของปุ่ม → ดูได้ว่าคอร์สไหนสร้าง lead มากที่สุด
+## การวัดผลและแท็กโฆษณา
 
-## Deploy (Vercel — แนะนำ)
+**PostHog** (`assets/js/main.js`) — ทุกคลิกปุ่ม LINE และปุ่มโทรถูกส่งเป็น event `line_click` / `call_click` พร้อมระบุหน้าและข้อความของปุ่ม → ดูได้ว่าคอร์สไหนสร้าง lead มากที่สุด
 
-repo นี้พร้อม deploy บน Vercel ทันที (มี `vercel.json` แล้ว ไม่ต้องตั้งค่า build):
+**แท็กเดิมจาก jiacpr.com** (`assets/js/tracking.js`) — ยกมาครบชุดเดียวกับเว็บเดิม เพื่อให้ยอด conversion ของโฆษณาไม่ขาดตอนตอนย้ายโดเมน:
 
-1. เข้า [vercel.com/new](https://vercel.com/new) (team **JiaLucksa company**)
-2. กด **Import** repo `jiacpr-arch/jiacpr`
-3. Framework Preset: **Other** — ไม่ต้องใส่ Build Command / Output Directory → กด **Deploy**
-4. เสร็จแล้วได้เว็บที่ `jiacpr.vercel.app` — ทุกครั้งที่ push โค้ด Vercel deploy ให้อัตโนมัติ และทุก PR ได้ลิงก์ preview
-5. ต่อ domain: Project → Settings → **Domains** → เพิ่ม `jiacpr.com` และ `www.jiacpr.com` แล้วตั้ง DNS ตามที่ Vercel บอก (ง่ายกว่า GitHub Pages)
+| แท็ก | ID |
+|---|---|
+| Google Analytics 4 | `G-TLM9JTDJF3` |
+| Google Ads | `AW-11472746518`, `AW-17937223034` |
+| Google Tag Manager | `GTM-K4D98KS6` |
+| Meta (Facebook) Pixel | `1103064446544207` |
+| LINE Tag | `918927da-c2bf-4ca3-894b-e95d7a4d9a44` |
 
-หมายเหตุ: บน Vercel เปิด `cleanUrls` ไว้ URL จะสวยแบบ `/course` (ลิงก์ `.html` เดิม redirect ให้อัตโนมัติ)
+คลิกปุ่ม LINE/โทร จะยิง event `line_click`/`call_click` เข้า GA4, `Contact` เข้า Meta Pixel และ conversion เข้า LINE Tag → เอาไปตั้งเป็น conversion goal ในแต่ละแพลตฟอร์มได้เลย
 
-## Deploy (GitHub Pages — ทางเลือกสำรอง)
+นอกจากนี้หน้าแรกมี meta **ยืนยันความเป็นเจ้าของโดเมน** ของ Google Search Console และ Meta Business ยกมาจากเว็บเดิม — **ห้ามลบ** ไม่งั้นสิทธิ์โดเมนหลุดตอนย้ายเว็บ
 
-merge เข้า `main` แล้วระบบ deploy อัตโนมัติผ่าน `.github/workflows/pages.yml`
+## Deploy (Vercel)
 
-**ตั้งค่าครั้งแรก (ทำครั้งเดียว):**
-1. ไปที่ repo → **Settings → Pages → Source** เลือก **GitHub Actions**
-2. เว็บจะออนไลน์ที่ `https://jiacpr-arch.github.io/jiacpr/`
+repo นี้ deploy อัตโนมัติบน Vercel อยู่แล้ว — team **JiaLucksa company** โปรเจกต์ **jiacpr** (ตอนนี้อยู่ที่ `jiacpr.vercel.app`) ทุกครั้งที่ push โค้ดขึ้น `main` Vercel deploy ให้เอง และทุก PR ได้ลิงก์ preview
 
-## ✅ Checklist ย้าย domain jiacpr.com (ทำเมื่อพร้อม — เว็บเดิมยังใช้ได้ระหว่างนี้)
+หมายเหตุ: เปิด `cleanUrls` ไว้ URL จะสวยแบบ `/course` (ลิงก์ `.html` เดิม redirect ให้อัตโนมัติ) และ `vercel.json` มี redirect จาก URL เว็บเดิมทั้งหมดไว้แล้ว (ดูหัวข้อถัดไป)
 
-1. ตรวจเนื้อหา/ราคา (จุด `TODO`) และใส่รูปจริงให้ครบ
-2. Settings → Pages → **Custom domain** ใส่ `www.jiacpr.com` แล้วรอ GitHub ตรวจสอบ
-3. ที่ผู้ให้บริการ domain ของคุณ ตั้ง DNS:
-   - `www` → CNAME → `jiacpr-arch.github.io`
-   - root (`jiacpr.com`) → A records → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-4. รอ DNS อัปเดต (อาจถึง 24 ชม.) แล้วติ๊ก **Enforce HTTPS**
-5. แก้ URL ใน `sitemap.xml`, `robots.txt` และ `canonical`/`og:url` ในทุกหน้า จาก `https://jiacpr-arch.github.io/jiacpr/` เป็น `https://www.jiacpr.com/` (ค้นหา-แทนที่ทีเดียวทั้งโปรเจกต์)
-6. แจ้ง Google Search Console ให้ index เว็บใหม่ เพื่อรักษาอันดับ SEO
+## ✅ Checklist วันตัดโดเมน jiacpr.com มาเว็บใหม่
+
+> สถานะปัจจุบัน: DNS ของ `jiacpr.com` และ `www.jiacpr.com` ยังชี้ไปเว็บเดิม (MakeWebEasy, IP `147.50.226.13`) — เว็บเดิมยังทำงานปกติจนกว่าจะเปลี่ยน DNS
+
+**ก่อนตัด**
+1. อัปเดต `assets/data/schedule.json` ให้เป็นรอบอบรมจริงที่กำลังจะถึง (รอบที่เลยวันแล้วเว็บซ่อนให้อัตโนมัติ ถ้าไม่เหลือรอบเลยตารางจะขึ้นข้อความให้ทัก LINE แทน)
+2. ตรวจราคา/เนื้อหาที่ยังเป็นค่าประมาณ (ค้นหา `TODO` ในไฟล์ HTML)
+3. เปิด `jiacpr.vercel.app` ทวนหน้าสำคัญให้ครบก่อนตัดจริง
+
+**วันตัด**
+4. Vercel → โปรเจกต์ `jiacpr` → Settings → **Domains** → เพิ่ม `www.jiacpr.com` และ `jiacpr.com` (ตั้งให้ `jiacpr.com` redirect ไป `www`)
+5. ที่ผู้ให้บริการ domain ตั้ง DNS ตามที่หน้า Domains ของ Vercel แจ้ง (ค่ามาตรฐานคือ `www` → CNAME → `cname.vercel-dns.com` และ root → A → `76.76.21.21` — **ยึดค่าที่ Vercel แสดงเป็นหลัก**)
+6. รอ DNS อัปเดต (ปกติไม่กี่นาที–ไม่กี่ชั่วโมง) Vercel จะออกใบรับรอง HTTPS ให้เอง
+7. เช็ก redirect ของ URL เดิมว่าไม่ 404 เช่น `https://www.jiacpr.com/pricing`, `/savelife`, `/blog/xxx`
+
+**หลังตัด**
+8. Google Search Console → ส่ง `https://www.jiacpr.com/sitemap.xml` ใหม่ และดู Coverage ว่า URL เดิม redirect ถูกต้อง
+9. เช็กว่า GA4 / Google Ads / Meta Pixel / LINE Tag ยังเก็บข้อมูลได้ (ดู realtime ของแต่ละแพลตฟอร์ม)
+10. **อย่าเพิ่งปิดเว็บเดิมทันที** — เก็บไว้ก่อนอย่างน้อย 1–2 เดือน เผื่อต้องย้อนดูเนื้อหาบทความเดิม
 
 ## รันดูในเครื่อง
 
