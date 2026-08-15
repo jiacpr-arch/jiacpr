@@ -42,7 +42,8 @@
       .then(function (r) { return r.json(); })
       .then(function (rows) {
         var list = rows.filter(function (r) {
-          return !filterCourse || r.course === filterCourse;
+          if (filterCourse && r.course !== filterCourse) return false;
+          return !isPast(r.date);
         });
         if (!list.length) {
           scheduleBody.innerHTML =
@@ -56,6 +57,22 @@
         scheduleBody.innerHTML =
           '<tr><td colspan="5">โหลดตารางไม่สำเร็จ — สอบถามรอบอบรมทาง LINE ' + LINE_ID + " ได้เลยครับ</td></tr>";
       });
+  }
+
+  /* รอบที่เลยวันไปแล้วไม่ต้องแสดง — อ่านวันจากข้อความไทย เช่น
+     "เสาร์ 18 ก.ค. 2569" หรือ "เสาร์–อาทิตย์ 15–16 ส.ค. 2569" (ใช้วันสุดท้ายของช่วง)
+     ถ้าอ่านไม่ออกจะแสดงรอบนั้นไว้ก่อน เพื่อไม่ให้รอบหายเพราะพิมพ์ผิดรูปแบบ */
+  var THAI_MONTHS = ["ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค."];
+
+  function isPast(dateText) {
+    var m = /(\d{1,2})\s*(?:[–\-]\s*(\d{1,2})\s*)?([ก-๙]+\.?[ก-๙]*\.)\s*(\d{4})/.exec(String(dateText || ""));
+    if (!m) return false;
+    var month = THAI_MONTHS.indexOf(m[3]);
+    if (month < 0) return false;
+    var day = parseInt(m[2] || m[1], 10);
+    var year = parseInt(m[4], 10) - 543; /* พ.ศ. → ค.ศ. */
+    var end = new Date(year, month, day, 23, 59, 59);
+    return end.getTime() < Date.now();
   }
 
   function renderRow(r) {

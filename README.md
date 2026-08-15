@@ -43,39 +43,84 @@
 - `ph-*.svg` — รูปการ์ดคอร์ส (สัดส่วน 16:9)
 - `hero-cpr.svg` — รูปใหญ่หน้าแรก
 
-## การวัดผล (PostHog)
-ทุกคลิกปุ่ม LINE และปุ่มโทรถูกส่งเป็น event `line_click` / `call_click` เข้า PostHog โปรเจกต์ของคุณ พร้อมระบุหน้าและข้อความของปุ่ม → ดูได้ว่าคอร์สไหนสร้าง lead มากที่สุด
+## การวัดผลและแท็กโฆษณา
 
-## Deploy (Vercel — แนะนำ)
+**PostHog** (`assets/js/main.js`) — ทุกคลิกปุ่ม LINE และปุ่มโทรถูกส่งเป็น event `line_click` / `call_click` พร้อมระบุหน้าและข้อความของปุ่ม → ดูได้ว่าคอร์สไหนสร้าง lead มากที่สุด
 
-repo นี้พร้อม deploy บน Vercel ทันที (มี `vercel.json` แล้ว ไม่ต้องตั้งค่า build):
+**แท็กเดิมจาก jiacpr.com** (`assets/js/tracking.js`) — ยกมาครบชุดเดียวกับเว็บเดิม เพื่อให้ยอด conversion ของโฆษณาไม่ขาดตอนตอนย้ายโดเมน:
 
-1. เข้า [vercel.com/new](https://vercel.com/new) (team **JiaLucksa company**)
-2. กด **Import** repo `jiacpr-arch/jiacpr`
-3. Framework Preset: **Other** — ไม่ต้องใส่ Build Command / Output Directory → กด **Deploy**
-4. เสร็จแล้วได้เว็บที่ `jiacpr.vercel.app` — ทุกครั้งที่ push โค้ด Vercel deploy ให้อัตโนมัติ และทุก PR ได้ลิงก์ preview
-5. ต่อ domain: Project → Settings → **Domains** → เพิ่ม `jiacpr.com` และ `www.jiacpr.com` แล้วตั้ง DNS ตามที่ Vercel บอก (ง่ายกว่า GitHub Pages)
+| แท็ก | ID |
+|---|---|
+| Google Analytics 4 | `G-TLM9JTDJF3` |
+| Google Ads | `AW-11472746518`, `AW-17937223034` |
+| Google Tag Manager | `GTM-K4D98KS6` |
+| Meta (Facebook) Pixel | `1103064446544207` |
+| LINE Tag | `918927da-c2bf-4ca3-894b-e95d7a4d9a44` |
 
-หมายเหตุ: บน Vercel เปิด `cleanUrls` ไว้ URL จะสวยแบบ `/course` (ลิงก์ `.html` เดิม redirect ให้อัตโนมัติ)
+คลิกปุ่ม LINE/โทร จะยิง event `line_click`/`call_click` เข้า GA4, `Contact` เข้า Meta Pixel และ conversion เข้า LINE Tag → เอาไปตั้งเป็น conversion goal ในแต่ละแพลตฟอร์มได้เลย
 
-## Deploy (GitHub Pages — ทางเลือกสำรอง)
+นอกจากนี้หน้าแรกมี meta **ยืนยันความเป็นเจ้าของโดเมน** ของ Google Search Console และ Meta Business ยกมาจากเว็บเดิม — **ห้ามลบ** ไม่งั้นสิทธิ์โดเมนหลุดตอนย้ายเว็บ
 
-merge เข้า `main` แล้วระบบ deploy อัตโนมัติผ่าน `.github/workflows/pages.yml`
+## Deploy (Vercel)
 
-**ตั้งค่าครั้งแรก (ทำครั้งเดียว):**
-1. ไปที่ repo → **Settings → Pages → Source** เลือก **GitHub Actions**
-2. เว็บจะออนไลน์ที่ `https://jiacpr-arch.github.io/jiacpr/`
+repo นี้ deploy อัตโนมัติบน Vercel อยู่แล้ว — team **JiaLucksa company** โปรเจกต์ **jiacpr** (ตอนนี้อยู่ที่ `jiacpr.vercel.app`) ทุกครั้งที่ push โค้ดขึ้น `main` Vercel deploy ให้เอง และทุก PR ได้ลิงก์ preview
 
-## ✅ Checklist ย้าย domain jiacpr.com (ทำเมื่อพร้อม — เว็บเดิมยังใช้ได้ระหว่างนี้)
+หมายเหตุ: เปิด `cleanUrls` ไว้ URL จะสวยแบบ `/course` (ลิงก์ `.html` เดิม redirect ให้อัตโนมัติ) และ `vercel.json` มี redirect จาก URL เว็บเดิมทั้งหมดไว้แล้ว (ดูหัวข้อถัดไป)
 
-1. ตรวจเนื้อหา/ราคา (จุด `TODO`) และใส่รูปจริงให้ครบ
-2. Settings → Pages → **Custom domain** ใส่ `www.jiacpr.com` แล้วรอ GitHub ตรวจสอบ
-3. ที่ผู้ให้บริการ domain ของคุณ ตั้ง DNS:
-   - `www` → CNAME → `jiacpr-arch.github.io`
-   - root (`jiacpr.com`) → A records → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-4. รอ DNS อัปเดต (อาจถึง 24 ชม.) แล้วติ๊ก **Enforce HTTPS**
-5. แก้ URL ใน `sitemap.xml`, `robots.txt` และ `canonical`/`og:url` ในทุกหน้า จาก `https://jiacpr-arch.github.io/jiacpr/` เป็น `https://www.jiacpr.com/` (ค้นหา-แทนที่ทีเดียวทั้งโปรเจกต์)
-6. แจ้ง Google Search Console ให้ index เว็บใหม่ เพื่อรักษาอันดับ SEO
+## ✅ Checklist วันตัดโดเมน jiacpr.com มาเว็บใหม่
+
+> สถานะปัจจุบัน: DNS ของ `jiacpr.com` และ `www.jiacpr.com` ยังชี้ไปเว็บเดิม (MakeWebEasy, IP `147.50.226.13`) — เว็บเดิมยังทำงานปกติจนกว่าจะเปลี่ยน DNS
+
+**ก่อนตัด**
+1. อัปเดต `assets/data/schedule.json` ให้เป็นรอบอบรมจริงที่กำลังจะถึง (รอบที่เลยวันแล้วเว็บซ่อนให้อัตโนมัติ ถ้าไม่เหลือรอบเลยตารางจะขึ้นข้อความให้ทัก LINE แทน)
+2. ตรวจราคา/เนื้อหาที่ยังเป็นค่าประมาณ (ค้นหา `TODO` ในไฟล์ HTML)
+3. เปิด `jiacpr.vercel.app` ทวนหน้าสำคัญให้ครบก่อนตัดจริง
+
+**วันตัด**
+4. Vercel → โปรเจกต์ `jiacpr` → Settings → **Domains** → เพิ่ม `www.jiacpr.com` และ `jiacpr.com` (ตั้งให้ `jiacpr.com` redirect ไป `www`)
+5. ที่ผู้ให้บริการ domain ตั้ง DNS ตามที่หน้า Domains ของ Vercel แจ้ง (ค่ามาตรฐานคือ `www` → CNAME → `cname.vercel-dns.com` และ root → A → `76.76.21.21` — **ยึดค่าที่ Vercel แสดงเป็นหลัก**)
+6. รอ DNS อัปเดต (ปกติไม่กี่นาที–ไม่กี่ชั่วโมง) Vercel จะออกใบรับรอง HTTPS ให้เอง
+7. เช็ก redirect ของ URL เดิมว่าไม่ 404 เช่น `https://www.jiacpr.com/pricing`, `/savelife`, `/blog/xxx`
+
+**หลังตัด**
+8. Google Search Console → ส่ง `https://www.jiacpr.com/sitemap.xml` ใหม่ และดู Coverage ว่า URL เดิม redirect ถูกต้อง
+9. เช็กว่า GA4 / Google Ads / Meta Pixel / LINE Tag ยังเก็บข้อมูลได้ (ดู realtime ของแต่ละแพลตฟอร์ม)
+10. **อย่าเพิ่งปิดเว็บเดิมทันที** — เก็บไว้ก่อนอย่างน้อย 1–2 เดือน เผื่อต้องย้อนดูเนื้อหาบทความเดิม
+
+## Redirect จาก URL เว็บเดิม (อยู่ใน `vercel.json`)
+
+เว็บเดิมมี 947 URL เว็บใหม่มี 11 หน้า — ถ้าไม่ทำอะไรเลย ลิงก์เก่าที่ค้างใน Google/LINE/นามบัตรจะ 404 หมด ตอนนี้ `vercel.json` มี redirect แบบถาวร (301) ครอบไว้แล้ว 159 กฎ:
+
+| กลุ่ม URL เดิม | ไปที่ |
+|---|---|
+| `/home` | `/` |
+| `/pricing`, `/booking`, `/newcourse` | `/course` |
+| `/savelife` | `/cpr-aed` |
+| `/coperate` | `/inhouse` |
+| `/cprbook`, `/manual`, `/manual-vdo` | `/online` |
+| `/simcpr`, `/subscription-aed` | `/rental` |
+| `/termscondition` | `/terms` |
+| `/product/*` (สินค้าเช่า ~100 รายการ) | `/rental` |
+| `/product/*` (14 รายการที่เป็นคอร์ส) | `/course`, `/acls`, `/cpr-aed`, `/inhouse` ตามชนิดคอร์ส |
+| `/category/683*`, `/category/2032`, `/category/2581` | `/rental` |
+| `/category/684*` | `/course` (ย่อย acls/savelife แยกไปหน้าคอร์สนั้น) |
+| `/album/*`, `/categoryalbum/*` | `/about` |
+| `/faq`, `/faq/*` | `/#faq` (ข้อที่เจาะจงไป `/rental`, `/bls`, `/acls`, `/cpr-aed`) |
+| `/form/*` | `/contact` |
+| `/blog/*` **54 บทความที่เกี่ยวกับ CPR/AED/BLS/ACLS** | `/cpr-aed`, `/bls`, `/acls` ตามหัวข้อ |
+| `/blog/*` ที่เหลือ (~678 บทความ) | **ไม่ redirect** — ตกไปหน้า 404 ที่มีลิงก์บอกทางต่อ |
+
+เหตุผลที่ไม่ redirect บทความที่เหลือทั้งหมดไปหน้าแรก: Google ตีความว่าเป็น soft-404 จำนวนมาก แล้วจะกดอันดับโดเมนช่วงเปลี่ยนผ่าน ปล่อยให้ 404 ตรงๆ สะอาดกว่า
+
+## ⚠️ เรื่องที่ต้องให้เจ้าของตัดสินใจก่อน/หลังตัดโดเมน
+
+1. **บทความ 732 ชิ้นบนเว็บเดิม** (โรคต่างๆ, ถาม-ตอบสุขภาพ) — เว็บใหม่ไม่มีระบบบทความ ทางเลือก: (ก) เก็บเว็บเดิมไว้ที่ subdomain เช่น `blog.jiacpr.com` แล้ว redirect `/blog/*` ไปที่นั่น = ไม่เสีย traffic เลย (ข) ย้ายเฉพาะบทความ CPR/AED มาทำเป็นหน้า static (ค) ปล่อยหลุด index ไป
+2. **`/nl` คลังข้อสอบใบประกอบวิชาชีพ** และ **`/rugondee` (แบรนด์รู้ก่อนดี)** — เป็นคนละธุรกิจกับ CPR ยังไม่ได้ตั้ง redirect ไว้ ถ้ายังทำอยู่ต้องชี้ไปโดเมนใหม่ ถ้าเลิกแล้วปล่อย 404 ได้
+3. **`/subscription-aed`** — เว็บเดิมมีหน้าเต็มพร้อม 3 แพ็กเกจ (2,990 / 3,990 / 4,990 บาทต่อเดือน) แต่เว็บใหม่เหลือการ์ดเดียวไม่มีราคา นี่คือสินค้าที่มูลค่าต่อดีลสูงสุด ควรทำหน้าเต็มคืน
+4. **ราคาที่ยังไม่ได้ยืนยัน** (ยังมีคอมเมนต์ `TODO` ในไฟล์): BLS 1,800/คน, In-house Plus 19,500/รุ่น, ขาย AED 39,900/เครื่อง, สถิติหน้าแรก (20,000+ ผู้ผ่านการอบรม, 4.9/5 จาก 120+ รีวิว) และเงื่อนไขในหน้า `terms`
+5. **นโยบาย PDPA** — เว็บเดิมมีหน้านโยบายความเป็นส่วนตัวเต็มรูปแบบ (มีผล 13 มี.ค. 2569) เว็บใหม่มีแค่ 2 บรรทัดในหน้าเงื่อนไข และยังไม่มีแบนเนอร์คุกกี้ ทั้งที่เว็บมี GA4/Pixel/LINE Tag — ควรยกนโยบายเดิมมาเป็นหน้า `/privacy`
+6. **หลักสูตรที่เว็บเดิมยังขายอยู่แต่เว็บใหม่ไม่มี**: OSCE Training, Airway Training, EKG Trainer, ALS Blue Code, คอร์สเปิดเส้น-บริหารยาฉุกเฉินสำหรับพยาบาล และหมวดจำหน่ายเครื่องมือแพทย์ Yuwell
+7. **การอ้างชื่อ AHA** — เว็บเดิมอ้าง "มาตรฐาน AHA" ตรงๆ เว็บใหม่ใช้คำว่า "แนวทางมาตรฐานสากล" ทั้งหมด ถ้าตั้งใจเลี่ยงเรื่องสิทธิ์การใช้ชื่อก็ถูกแล้ว แต่ควรยืนยันว่าเป็นความตั้งใจ
 
 ## รันดูในเครื่อง
 

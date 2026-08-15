@@ -2,11 +2,811 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pricing",
+      "destination": "/course",
+      "permanent": true
+    },
+    {
+      "source": "/booking",
+      "destination": "/course",
+      "permanent": true
+    },
+    {
+      "source": "/newcourse",
+      "destination": "/course",
+      "permanent": true
+    },
+    {
+      "source": "/savelife",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/simcpr",
+      "destination": "/rental",
+      "permanent": true
+    },
+    {
+      "source": "/subscription-aed",
+      "destination": "/rental",
+      "permanent": true
+    },
+    {
+      "source": "/cprbook",
+      "destination": "/online",
+      "permanent": true
+    },
+    {
+      "source": "/manual",
+      "destination": "/online",
+      "permanent": true
+    },
+    {
+      "source": "/manual-vdo",
+      "destination": "/online",
+      "permanent": true
+    },
+    {
+      "source": "/coperate",
+      "destination": "/inhouse",
+      "permanent": true
+    },
+    {
+      "source": "/termscondition",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/myaed-finder",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/aed-decode",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "/#faq",
+      "permanent": true
+    },
+    {
+      "source": "/faq/120/:slug*",
+      "destination": "/rental",
+      "permanent": true
+    },
+    {
+      "source": "/faq/121/:slug*",
+      "destination": "/rental",
+      "permanent": true
+    },
+    {
+      "source": "/faq/125/:slug*",
+      "destination": "/rental",
+      "permanent": true
+    },
+    {
+      "source": "/faq/122/:slug*",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/faq/123/:slug*",
+      "destination": "/bls",
+      "permanent": true
+    },
+    {
+      "source": "/faq/124/:slug*",
+      "destination": "/acls",
+      "permanent": true
+    },
+    {
+      "source": "/faq/:path*",
+      "destination": "/#faq",
+      "permanent": true
+    },
+    {
+      "source": "/form/:path*",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/album/:path*",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/categoryalbum/:path*",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/product/25915-30055/:slug*",
+      "destination": "/course",
+      "permanent": true
+    },
+    {
+      "source": "/product/25916-30056/:slug*",
+      "destination": "/course",
+      "permanent": true
+    },
+    {
+      "source": "/product/25917-30057/:slug*",
+      "destination": "/course",
+      "permanent": true
+    },
+    {
+      "source": "/product/25918-30058/:slug*",
+      "destination": "/inhouse",
+      "permanent": true
+    },
+    {
+      "source": "/product/25919-30059/:slug*",
+      "destination": "/course",
+      "permanent": true
+    },
+    {
+      "source": "/product/25920-30060/:slug*",
+      "destination": "/course",
+      "permanent": true
+    },
+    {
+      "source": "/product/45171-63019/:slug*",
+      "destination": "/course",
+      "permanent": true
+    },
+    {
+      "source": "/product/46775-66705/:slug*",
+      "destination": "/acls",
+      "permanent": true
+    },
+    {
+      "source": "/product/47469-69078/:slug*",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/product/47470-69079/:slug*",
+      "destination": "/course",
+      "permanent": true
+    },
+    {
+      "source": "/product/47525-69486/:slug*",
+      "destination": "/acls",
+      "permanent": true
+    },
+    {
+      "source": "/product/47549-69693/:slug*",
+      "destination": "/acls",
+      "permanent": true
+    },
+    {
+      "source": "/product/48504-75903/:slug*",
+      "destination": "/course",
+      "permanent": true
+    },
+    {
+      "source": "/product/48506-75905/:slug*",
+      "destination": "/course",
+      "permanent": true
+    },
+    {
+      "source": "/product/:path*",
+      "destination": "/rental",
+      "permanent": true
+    },
+    {
+      "source": "/category/683/:slug*",
+      "destination": "/rental",
+      "permanent": true
+    },
+    {
+      "source": "/category/683-:sub/:slug*",
+      "destination": "/rental",
+      "permanent": true
+    },
+    {
+      "source": "/category/684-1607/:slug*",
+      "destination": "/acls",
+      "permanent": true
+    },
+    {
+      "source": "/category/684-1608/:slug*",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/category/684/:slug*",
+      "destination": "/course",
+      "permanent": true
+    },
+    {
+      "source": "/category/684-:sub/:slug*",
+      "destination": "/course",
+      "permanent": true
+    },
+    {
+      "source": "/category/2032/:slug*",
+      "destination": "/rental",
+      "permanent": true
+    },
+    {
+      "source": "/category/2530/:slug*",
+      "destination": "/course",
+      "permanent": true
+    },
+    {
+      "source": "/category/2581/:slug*",
+      "destination": "/rental",
+      "permanent": true
+    },
+    {
+      "source": "/category/:path*",
+      "destination": "/course",
+      "permanent": true
+    },
+    {
+      "source": "/category",
+      "destination": "/course",
+      "permanent": true
+    },
+    {
+      "source": "/blog/8524/คำถาม-การปั้มหัวใจเชิงลึก",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/8524/%E0%B8%84%E0%B8%B3%E0%B8%96%E0%B8%B2%E0%B8%A1-%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%B1%E0%B9%89%E0%B8%A1%E0%B8%AB%E0%B8%B1%E0%B8%A7%E0%B9%83%E0%B8%88%E0%B9%80%E0%B8%8A%E0%B8%B4%E0%B8%87%E0%B8%A5%E0%B8%B6%E0%B8%81",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/8595/คำถาม-chest-compression-fraction-คืออะไรสำคัญยังไงกับการปั้มหัวใจ",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/8595/%E0%B8%84%E0%B8%B3%E0%B8%96%E0%B8%B2%E0%B8%A1-chest-compression-fraction-%E0%B8%84%E0%B8%B7%E0%B8%AD%E0%B8%AD%E0%B8%B0%E0%B9%84%E0%B8%A3%E0%B8%AA%E0%B8%B3%E0%B8%84%E0%B8%B1%E0%B8%8D%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%87%E0%B8%81%E0%B8%B1%E0%B8%9A%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%B1%E0%B9%89%E0%B8%A1%E0%B8%AB%E0%B8%B1%E0%B8%A7%E0%B9%83%E0%B8%88",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9241/วันที่-13-กันยายน-2025-วันปฐมพยาบาลโลก",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9241/%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B9%88-13-%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B8%A2%E0%B8%B2%E0%B8%A2%E0%B8%99-2025-%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B8%9B%E0%B8%90%E0%B8%A1%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B9%82%E0%B8%A5%E0%B8%81",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9531/คลื่นไฟฟ้าตอน-cpr-วัดความเร็วของการปั๊มได้ไหม",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9531/%E0%B8%84%E0%B8%A5%E0%B8%B7%E0%B9%88%E0%B8%99%E0%B9%84%E0%B8%9F%E0%B8%9F%E0%B9%89%E0%B8%B2%E0%B8%95%E0%B8%AD%E0%B8%99-cpr-%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%A3%E0%B9%87%E0%B8%A7%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%B1%E0%B9%8A%E0%B8%A1%E0%B9%84%E0%B8%94%E0%B9%89%E0%B9%84%E0%B8%AB%E0%B8%A1",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9532/cpr-ทำไมต้องปล่อยสุดทุกครั้ง",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9532/cpr-%E0%B8%97%E0%B8%B3%E0%B9%84%E0%B8%A1%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%9B%E0%B8%A5%E0%B9%88%E0%B8%AD%E0%B8%A2%E0%B8%AA%E0%B8%B8%E0%B8%94%E0%B8%97%E0%B8%B8%E0%B8%81%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B9%89%E0%B8%87",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9555/เมื่อ-aed-มาถึงขั้นตอนแรกควรทำอย่างไร",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9555/%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B9%88%E0%B8%AD-aed-%E0%B8%A1%E0%B8%B2%E0%B8%96%E0%B8%B6%E0%B8%87%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%A3%E0%B8%81%E0%B8%84%E0%B8%A7%E0%B8%A3%E0%B8%97%E0%B8%B3%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%84%E0%B8%A3",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9556/cpr-ต้องช่วยหายใจไหม-",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9556/cpr-%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%AB%E0%B8%B2%E0%B8%A2%E0%B9%83%E0%B8%88%E0%B9%84%E0%B8%AB%E0%B8%A1-",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9558/เครื่อง-aed-รู้ได้อย่างไรว่าต้องช็อก",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9558/%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-aed-%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%84%E0%B8%A3%E0%B8%A7%E0%B9%88%E0%B8%B2%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%8A%E0%B9%87%E0%B8%AD%E0%B8%81",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9572/เป้าหมายของการไหลเวียนเลือดขณะ-cpr-",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9572/%E0%B9%80%E0%B8%9B%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A2%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%84%E0%B8%AB%E0%B8%A5%E0%B9%80%E0%B8%A7%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B9%80%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%94%E0%B8%82%E0%B8%93%E0%B8%B0-cpr-",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9598/เครื่อง-aed-อ่านทำไมต้องหยุดกดหน้าอก",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9598/%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87-aed-%E0%B8%AD%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B8%97%E0%B8%B3%E0%B9%84%E0%B8%A1%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%AB%E0%B8%A2%E0%B8%B8%E0%B8%94%E0%B8%81%E0%B8%94%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%AD%E0%B8%81",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9599/cpr-ทำไมต้องเร็ว-100-120-ครั้งต่อนาที",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9599/cpr-%E0%B8%97%E0%B8%B3%E0%B9%84%E0%B8%A1%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%A3%E0%B9%87%E0%B8%A7-100-120-%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%95%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B8%B2%E0%B8%97%E0%B8%B5",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9601/ติดแผ่น-aed-หน้าหลัง-แบบไหนถึงถูกต้อง",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9601/%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B9%81%E0%B8%9C%E0%B9%88%E0%B8%99-aed-%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87-%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B9%84%E0%B8%AB%E0%B8%99%E0%B8%96%E0%B8%B6%E0%B8%87%E0%B8%96%E0%B8%B9%E0%B8%81%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9602/ทำไมเตียง-cpr-ต้องนอนราบหรือแข็ง",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9602/%E0%B8%97%E0%B8%B3%E0%B9%84%E0%B8%A1%E0%B9%80%E0%B8%95%E0%B8%B5%E0%B8%A2%E0%B8%87-cpr-%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%99%E0%B8%AD%E0%B8%99%E0%B8%A3%E0%B8%B2%E0%B8%9A%E0%B8%AB%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B9%81%E0%B8%82%E0%B9%87%E0%B8%87",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9603/ทำไมผู้ป่วยต้องอยู่-039039ระดับเข่า039039-ของผู้ทำ-cpr",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9603/%E0%B8%97%E0%B8%B3%E0%B9%84%E0%B8%A1%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%9B%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%AD%E0%B8%A2%E0%B8%B9%E0%B9%88-039039%E0%B8%A3%E0%B8%B0%E0%B8%94%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%82%E0%B9%88%E0%B8%B2039039-%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%97%E0%B8%B3-cpr",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9606/ทำไมบุคลากรแพทย์ยังใช้-302-ในการทำ-cpr",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9606/%E0%B8%97%E0%B8%B3%E0%B9%84%E0%B8%A1%E0%B8%9A%E0%B8%B8%E0%B8%84%E0%B8%A5%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B9%81%E0%B8%9E%E0%B8%97%E0%B8%A2%E0%B9%8C%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B9%83%E0%B8%8A%E0%B9%89-302-%E0%B9%83%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%97%E0%B8%B3-cpr",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9665/cpr-เด็กเล็ก-ใช้นิ้วหรือส้นมือ",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9665/cpr-%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81%E0%B9%80%E0%B8%A5%E0%B9%87%E0%B8%81-%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%99%E0%B8%B4%E0%B9%89%E0%B8%A7%E0%B8%AB%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B8%AA%E0%B9%89%E0%B8%99%E0%B8%A1%E0%B8%B7%E0%B8%AD",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9666/สำลักต้องตบหลังไหม",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9666/%E0%B8%AA%E0%B8%B3%E0%B8%A5%E0%B8%B1%E0%B8%81%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%95%E0%B8%9A%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B9%84%E0%B8%AB%E0%B8%A1",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9667/แปะ-แผ่น-aed-ต้องถอดบราไหม",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9667/%E0%B9%81%E0%B8%9B%E0%B8%B0-%E0%B9%81%E0%B8%9C%E0%B9%88%E0%B8%99-aed-%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%96%E0%B8%AD%E0%B8%94%E0%B8%9A%E0%B8%A3%E0%B8%B2%E0%B9%84%E0%B8%AB%E0%B8%A1",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9668/แปะแผ่น-aed-ถูกที่หรือยัง",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9668/%E0%B9%81%E0%B8%9B%E0%B8%B0%E0%B9%81%E0%B8%9C%E0%B9%88%E0%B8%99-aed-%E0%B8%96%E0%B8%B9%E0%B8%81%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%AB%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B8%A2%E0%B8%B1%E0%B8%87",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9669/ควรทำ-cpr-อย่างไรในผู้ป่วยอ้วน",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9669/%E0%B8%84%E0%B8%A7%E0%B8%A3%E0%B8%97%E0%B8%B3-cpr-%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%84%E0%B8%A3%E0%B9%83%E0%B8%99%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%9B%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%AD%E0%B9%89%E0%B8%A7%E0%B8%99",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9700/การทำ-cpr-ในหญิงตั้งครรภ์",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9700/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%97%E0%B8%B3-cpr-%E0%B9%83%E0%B8%99%E0%B8%AB%E0%B8%8D%E0%B8%B4%E0%B8%87%E0%B8%95%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%84%E0%B8%A3%E0%B8%A3%E0%B8%A0%E0%B9%8C",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9711/การแบ่งกลุ่มอายุ-ทารก-เด็ก-ผู้ใหญ่-ในการปฐมพยาบาล",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9711/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%81%E0%B8%9A%E0%B9%88%E0%B8%87%E0%B8%81%E0%B8%A5%E0%B8%B8%E0%B9%88%E0%B8%A1%E0%B8%AD%E0%B8%B2%E0%B8%A2%E0%B8%B8-%E0%B8%97%E0%B8%B2%E0%B8%A3%E0%B8%81-%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81-%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B9%83%E0%B8%AB%E0%B8%8D%E0%B9%88-%E0%B9%83%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9B%E0%B8%90%E0%B8%A1%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9716/ทารกสำลักช่วยอย่างไรให้ปลอดภัย",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9716/%E0%B8%97%E0%B8%B2%E0%B8%A3%E0%B8%81%E0%B8%AA%E0%B8%B3%E0%B8%A5%E0%B8%B1%E0%B8%81%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%84%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%9B%E0%B8%A5%E0%B8%AD%E0%B8%94%E0%B8%A0%E0%B8%B1%E0%B8%A2",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9717/feedback-ในการฝึก-cpr-ยังสำคัญไหม",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9717/feedback-%E0%B9%83%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9D%E0%B8%B6%E0%B8%81-cpr-%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B8%AA%E0%B8%B3%E0%B8%84%E0%B8%B1%E0%B8%8D%E0%B9%84%E0%B8%AB%E0%B8%A1",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9718/วิธีช่วยสำลักเด็กต่างจากเดิมไหม",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9718/%E0%B8%A7%E0%B8%B4%E0%B8%98%E0%B8%B5%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%AA%E0%B8%B3%E0%B8%A5%E0%B8%B1%E0%B8%81%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81%E0%B8%95%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B9%80%E0%B8%94%E0%B8%B4%E0%B8%A1%E0%B9%84%E0%B8%AB%E0%B8%A1",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9719/ส่งเสริม-cpr-ในชุมชน-ทำอย่างไร",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9719/%E0%B8%AA%E0%B9%88%E0%B8%87%E0%B9%80%E0%B8%AA%E0%B8%A3%E0%B8%B4%E0%B8%A1-cpr-%E0%B9%83%E0%B8%99%E0%B8%8A%E0%B8%B8%E0%B8%A1%E0%B8%8A%E0%B8%99-%E0%B8%97%E0%B8%B3%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%84%E0%B8%A3",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9727/เครื่องกดหน้าอก-auto-cpr-ยังจำเป็นอยู่ไหม",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9727/%E0%B9%80%E0%B8%84%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B8%94%E0%B8%AB%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%AD%E0%B8%81-auto-cpr-%E0%B8%A2%E0%B8%B1%E0%B8%87%E0%B8%88%E0%B8%B3%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%99%E0%B8%AD%E0%B8%A2%E0%B8%B9%E0%B9%88%E0%B9%84%E0%B8%AB%E0%B8%A1",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9732/การเข้าถึงหลอดเลือดดำในผู้ป่วยหัวใจหยุดเต้น-2025",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9732/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%96%E0%B8%B6%E0%B8%87%E0%B8%AB%E0%B8%A5%E0%B8%AD%E0%B8%94%E0%B9%80%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%94%E0%B8%94%E0%B8%B3%E0%B9%83%E0%B8%99%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%9B%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%AB%E0%B8%B1%E0%B8%A7%E0%B9%83%E0%B8%88%E0%B8%AB%E0%B8%A2%E0%B8%B8%E0%B8%94%E0%B9%80%E0%B8%95%E0%B9%89%E0%B8%99-2025",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9733/การใช้-vasopressor-ในผู้ป่วยหัวใจหยุดเต้น-2025",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9733/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89-vasopressor-%E0%B9%83%E0%B8%99%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%9B%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%AB%E0%B8%B1%E0%B8%A7%E0%B9%83%E0%B8%88%E0%B8%AB%E0%B8%A2%E0%B8%B8%E0%B8%94%E0%B9%80%E0%B8%95%E0%B9%89%E0%B8%99-2025",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9745/beta-blocker-ใน-acls-2025-ใช้ได้ไหม",
+      "destination": "/acls",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9745/beta-blocker-%E0%B9%83%E0%B8%99-acls-2025-%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%84%E0%B8%94%E0%B9%89%E0%B9%84%E0%B8%AB%E0%B8%A1",
+      "destination": "/acls",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9746/cpr-แบบยกหัวสูงทำได้ไหม",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9746/cpr-%E0%B9%81%E0%B8%9A%E0%B8%9A%E0%B8%A2%E0%B8%81%E0%B8%AB%E0%B8%B1%E0%B8%A7%E0%B8%AA%E0%B8%B9%E0%B8%87%E0%B8%97%E0%B8%B3%E0%B9%84%E0%B8%94%E0%B9%89%E0%B9%84%E0%B8%AB%E0%B8%A1",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9769/ecmo-ใน-acls-",
+      "destination": "/acls",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9769/ecmo-%E0%B9%83%E0%B8%99-acls-",
+      "destination": "/acls",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9773/การใช้-eeg-ทำการฟื้นตัวทางระบบประสาทหลังหัวใจหยุดเต้น",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9773/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89-eeg-%E0%B8%97%E0%B8%B3%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9F%E0%B8%B7%E0%B9%89%E0%B8%99%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%A3%E0%B8%B0%E0%B8%9A%E0%B8%9A%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%AA%E0%B8%B2%E0%B8%97%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%AB%E0%B8%B1%E0%B8%A7%E0%B9%83%E0%B8%88%E0%B8%AB%E0%B8%A2%E0%B8%B8%E0%B8%94%E0%B9%80%E0%B8%95%E0%B9%89%E0%B8%99",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9774/ปัญหาสุขภาพจิตในผู้รอดชีวิตจากหัวใจหยุดเต้น",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9774/%E0%B8%9B%E0%B8%B1%E0%B8%8D%E0%B8%AB%E0%B8%B2%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%88%E0%B8%B4%E0%B8%95%E0%B9%83%E0%B8%99%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%A3%E0%B8%AD%E0%B8%94%E0%B8%8A%E0%B8%B5%E0%B8%A7%E0%B8%B4%E0%B8%95%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%AB%E0%B8%B1%E0%B8%A7%E0%B9%83%E0%B8%88%E0%B8%AB%E0%B8%A2%E0%B8%B8%E0%B8%94%E0%B9%80%E0%B8%95%E0%B9%89%E0%B8%99",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9777/ทำไมภาวะผู้นำถึงสำคัญในการช่วยชีวิต",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9777/%E0%B8%97%E0%B8%B3%E0%B9%84%E0%B8%A1%E0%B8%A0%E0%B8%B2%E0%B8%A7%E0%B8%B0%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%99%E0%B8%B3%E0%B8%96%E0%B8%B6%E0%B8%87%E0%B8%AA%E0%B8%B3%E0%B8%84%E0%B8%B1%E0%B8%8D%E0%B9%83%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%8A%E0%B8%B5%E0%B8%A7%E0%B8%B4%E0%B8%95",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9778/การใช้แว่น-vr-เรียน-acls-",
+      "destination": "/acls",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9778/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%81%E0%B8%A7%E0%B9%88%E0%B8%99-vr-%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99-acls-",
+      "destination": "/acls",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9780/ความเหลื่อมล้ำในการเรียน-cpr-ปัญหาสาธารณสุขที่ต้องแก้ไข",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9780/%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%A5%E0%B9%89%E0%B8%B3%E0%B9%83%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99-cpr-%E0%B8%9B%E0%B8%B1%E0%B8%8D%E0%B8%AB%E0%B8%B2%E0%B8%AA%E0%B8%B2%E0%B8%98%E0%B8%B2%E0%B8%A3%E0%B8%93%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%81%E0%B8%81%E0%B9%89%E0%B9%84%E0%B8%82",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9781/การเรียน-cpr-สำหรับเด็ก",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9781/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99-cpr-%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9782/การฝึกปั๊มหัวใจใช้หมอนแทนได้ไหม",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9782/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%9D%E0%B8%B6%E0%B8%81%E0%B8%9B%E0%B8%B1%E0%B9%8A%E0%B8%A1%E0%B8%AB%E0%B8%B1%E0%B8%A7%E0%B9%83%E0%B8%88%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%99%E0%B9%81%E0%B8%97%E0%B8%99%E0%B9%84%E0%B8%94%E0%B9%89%E0%B9%84%E0%B8%AB%E0%B8%A1",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9812/การใช้คู่มือ-cpr-ช่วยได้ไหม",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9812/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%84%E0%B8%B9%E0%B9%88%E0%B8%A1%E0%B8%B7%E0%B8%AD-cpr-%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B9%84%E0%B8%94%E0%B9%89%E0%B9%84%E0%B8%AB%E0%B8%A1",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9851/ทำไม-chest-thrust-สำหรับสำลักในเด็ก-ต้องครั้งละ-1-วินาที",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9851/%E0%B8%97%E0%B8%B3%E0%B9%84%E0%B8%A1-chest-thrust-%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%AA%E0%B8%B3%E0%B8%A5%E0%B8%B1%E0%B8%81%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81-%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%A5%E0%B8%B0-1-%E0%B8%A7%E0%B8%B4%E0%B8%99%E0%B8%B2%E0%B8%97%E0%B8%B5",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9858/การทุบหลังทำให้สิ่งแปลกปลอมหลุดจากการสำลักได้อย่างไร",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9858/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%97%E0%B8%B8%E0%B8%9A%E0%B8%AB%E0%B8%A5%E0%B8%B1%E0%B8%87%E0%B8%97%E0%B8%B3%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%AA%E0%B8%B4%E0%B9%88%E0%B8%87%E0%B9%81%E0%B8%9B%E0%B8%A5%E0%B8%81%E0%B8%9B%E0%B8%A5%E0%B8%AD%E0%B8%A1%E0%B8%AB%E0%B8%A5%E0%B8%B8%E0%B8%94%E0%B8%88%E0%B8%B2%E0%B8%81%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%B3%E0%B8%A5%E0%B8%B1%E0%B8%81%E0%B9%84%E0%B8%94%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%84%E0%B8%A3",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9897/cpr-แบบ-302-จะคำนวน-ccf-ratio-ได้เท่าไร",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9897/cpr-%E0%B9%81%E0%B8%9A%E0%B8%9A-302-%E0%B8%88%E0%B8%B0%E0%B8%84%E0%B8%B3%E0%B8%99%E0%B8%A7%E0%B8%99-ccf-ratio-%E0%B9%84%E0%B8%94%E0%B9%89%E0%B9%80%E0%B8%97%E0%B9%88%E0%B8%B2%E0%B9%84%E0%B8%A3",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9898/cpr-แบบ-302-ช่วยหายใจ-ควรใช้เวลา-เท่าไร",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9898/cpr-%E0%B9%81%E0%B8%9A%E0%B8%9A-302-%E0%B8%8A%E0%B9%88%E0%B8%A7%E0%B8%A2%E0%B8%AB%E0%B8%B2%E0%B8%A2%E0%B9%83%E0%B8%88-%E0%B8%84%E0%B8%A7%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2-%E0%B9%80%E0%B8%97%E0%B9%88%E0%B8%B2%E0%B9%84%E0%B8%A3",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9899/pad-aed-ควร-แปะห่างจาก-internal-pace-maker-เท่าไร",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/9899/pad-aed-%E0%B8%84%E0%B8%A7%E0%B8%A3-%E0%B9%81%E0%B8%9B%E0%B8%B0%E0%B8%AB%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B8%88%E0%B8%B2%E0%B8%81-internal-pace-maker-%E0%B9%80%E0%B8%97%E0%B9%88%E0%B8%B2%E0%B9%84%E0%B8%A3",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/10059/aed-ทำไมต้องเสียบขั้วแผ่นแปะตลอดเวลา",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/10059/aed-%E0%B8%97%E0%B8%B3%E0%B9%84%E0%B8%A1%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B8%A2%E0%B8%9A%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%A7%E0%B9%81%E0%B8%9C%E0%B9%88%E0%B8%99%E0%B9%81%E0%B8%9B%E0%B8%B0%E0%B8%95%E0%B8%A5%E0%B8%AD%E0%B8%94%E0%B9%80%E0%B8%A7%E0%B8%A5%E0%B8%B2",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/10149/ทำไมเด็กทารกชีพจรต่ำว่า-60-ครั้งต่อนาที-จึงต้อง-cpr",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/10149/%E0%B8%97%E0%B8%B3%E0%B9%84%E0%B8%A1%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81%E0%B8%97%E0%B8%B2%E0%B8%A3%E0%B8%81%E0%B8%8A%E0%B8%B5%E0%B8%9E%E0%B8%88%E0%B8%A3%E0%B8%95%E0%B9%88%E0%B8%B3%E0%B8%A7%E0%B9%88%E0%B8%B2-60-%E0%B8%84%E0%B8%A3%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B8%95%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B8%B2%E0%B8%97%E0%B8%B5-%E0%B8%88%E0%B8%B6%E0%B8%87%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87-cpr",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/10152/ทำไมต้องคลำชีพจรที่คอก่อน-cpr-สำหรับบุคลากรทางการแพทย์",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/10152/%E0%B8%97%E0%B8%B3%E0%B9%84%E0%B8%A1%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%84%E0%B8%A5%E0%B8%B3%E0%B8%8A%E0%B8%B5%E0%B8%9E%E0%B8%88%E0%B8%A3%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%84%E0%B8%AD%E0%B8%81%E0%B9%88%E0%B8%AD%E0%B8%99-cpr-%E0%B8%AA%E0%B8%B3%E0%B8%AB%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%9A%E0%B8%B8%E0%B8%84%E0%B8%A5%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%81%E0%B8%9E%E0%B8%97%E0%B8%A2%E0%B9%8C",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/10155/การให้ยา-amiodarone-ใน-ขณะ-cpr-ควรให้อย่างไร",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/10155/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%A2%E0%B8%B2-amiodarone-%E0%B9%83%E0%B8%99-%E0%B8%82%E0%B8%93%E0%B8%B0-cpr-%E0%B8%84%E0%B8%A7%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%84%E0%B8%A3",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/10157/ถ้าต้องให้ยาหรือเลือด-push-ใน-cpr-ควรใช้-วิธีอย่างไร",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/10157/%E0%B8%96%E0%B9%89%E0%B8%B2%E0%B8%95%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%A2%E0%B8%B2%E0%B8%AB%E0%B8%A3%E0%B8%B7%E0%B8%AD%E0%B9%80%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%94-push-%E0%B9%83%E0%B8%99-cpr-%E0%B8%84%E0%B8%A7%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89-%E0%B8%A7%E0%B8%B4%E0%B8%98%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B9%84%E0%B8%A3",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/10158/การให้สารน้ำขณะ-cpr-",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/10158/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%AB%E0%B9%89%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%82%E0%B8%93%E0%B8%B0-cpr-",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/10285/เด็กชายสำลักเมล็ดน้อยหน่าเมล็ดน่าจะตกไปอยู่-ที่ใดของ-bronchus-",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/10285/%E0%B9%80%E0%B8%94%E0%B9%87%E0%B8%81%E0%B8%8A%E0%B8%B2%E0%B8%A2%E0%B8%AA%E0%B8%B3%E0%B8%A5%E0%B8%B1%E0%B8%81%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B9%87%E0%B8%94%E0%B8%99%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%B2%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B9%87%E0%B8%94%E0%B8%99%E0%B9%88%E0%B8%B2%E0%B8%88%E0%B8%B0%E0%B8%95%E0%B8%81%E0%B9%84%E0%B8%9B%E0%B8%AD%E0%B8%A2%E0%B8%B9%E0%B9%88-%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%83%E0%B8%94%E0%B8%82%E0%B8%AD%E0%B8%87-bronchus-",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/10305/aed-reconnect",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/blog/10472/aed-defib",
+      "destination": "/cpr-aed",
+      "permanent": true
+    },
+    {
+      "source": "/categoryblog/:path*",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     }
   ]
