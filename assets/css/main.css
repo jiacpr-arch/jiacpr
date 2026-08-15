@@ -155,6 +155,8 @@ a:hover { text-decoration: underline; }
 .card .card-media { background: var(--bg-soft); aspect-ratio: 16/9; display: block; }
 .card .card-media img, .card .card-media svg { width: 100%; height: 100%; object-fit: cover; display: block; }
 .card .card-body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+/* การ์ดที่มีป้ายมุมแต่ไม่มีรูป ต้องเว้นที่ให้ป้าย ไม่งั้นป้ายทับชื่อหัวข้อ */
+.card > .ribbon + .card-body { padding-top: 46px; }
 .card h3 { font-size: 20px; }
 .card p { color: var(--muted); font-size: 15.5px; }
 .card .meta { display: flex; gap: 14px; flex-wrap: wrap; font-size: 14px; color: var(--muted); }
